@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#1A1A1A"/>
+  <!-- Flow diagram -->
+  <!-- Node 1 -->
+  <rect x="80" y="220" width="140" height="60" rx="8" fill="#222" stroke="#D97757" stroke-width="1" stroke-opacity="0.4"/>
+  <rect x="100" y="238" width="80" height="8" rx="3" fill="#D97757" opacity="0.4"/>
+  <rect x="100" y="254" width="100" height="6" rx="3" fill="#444"/>
+  <!-- Arrow 1-2 -->
+  <line x1="220" y1="250" x2="300" y2="250" stroke="#333" stroke-width="2"/>
+  <polygon points="296,244 308,250 296,256" fill="#333"/>
+  <!-- Node 2 -->
+  <rect x="310" y="220" width="140" height="60" rx="8" fill="#222" stroke="#D97757" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="330" y="238" width="80" height="8" rx="3" fill="#D97757" opacity="0.3"/>
+  <rect x="330" y="254" width="100" height="6" rx="3" fill="#444"/>
+  <!-- Arrow 2-3 -->
+  <line x1="450" y1="250" x2="530" y2="250" stroke="#333" stroke-width="2"/>
+  <polygon points="526,244 538,250 526,256" fill="#333"/>
+  <!-- Node 3 -->
+  <rect x="540" y="220" width="140" height="60" rx="8" fill="#222" stroke="#D97757" stroke-width="1" stroke-opacity="0.3"/>
+  <rect x="560" y="238" width="80" height="8" rx="3" fill="#D97757" opacity="0.3"/>
+  <rect x="560" y="254" width="100" height="6" rx="3" fill="#444"/>
+  <!-- Arrow 3-4 -->
+  <line x1="680" y1="250" x2="760" y2="250" stroke="#333" stroke-width="2"/>
+  <polygon points="756,244 768,250 756,256" fill="#333"/>
+  <!-- Node 4 -->
+  <rect x="770" y="220" width="140" height="60" rx="8" fill="#222" stroke="#D97757" stroke-width="1" stroke-opacity="0.5"/>
+  <rect x="790" y="238" width="80" height="8" rx="3" fill="#D97757" opacity="0.5"/>
+  <rect x="790" y="254" width="100" height="6" rx="3" fill="#444"/>
+  <!-- Branch from node 2 -->
+  <line x1="380" y1="280" x2="380" y2="360" stroke="#333" stroke-width="2"/>
+  <polygon points="374,356 380,368 386,356" fill="#333"/>
+  <!-- Branch node -->
+  <rect x="310" y="370" width="140" height="60" rx="8" fill="#222" stroke="#444" stroke-width="1"/>
+  <rect x="330" y="388" width="80" height="8" rx="3" fill="#555"/>
+  <rect x="330" y="404" width="100" height="6" rx="3" fill="#333"/>
+  <!-- Title -->
+  <text x="480" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#555">Arquitectura de un agente de IA</text>
+  <text x="480" y="520" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#555">Diagrama de flujo de agente</text>
+</svg>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Curso en vivo de IA aplicada al trabajo real. Aprende a construir agentes, workflows y soluciones reales. Sin requisitos t&eacute;cnicos.">
+  <title>Curso de IA Aplicada al Trabajo Real | Acelera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__logo">Acelera</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Abrir men&uacute;">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="#cta-final" class="btn btn--primary navbar__cta">Reservar mi lugar</a>
+    </div>
+  </nav>
+
+  <!-- BLOQUE 1: HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1 class="hero__title">El curso para profesionales que quieren dominar IA <span class="text-accent">m&aacute;s all&aacute; de ChatGPT</span></h1>
+        <p class="hero__subtitle">No necesitas otro curso de prompts: aprende a construir agentes, workflows y soluciones reales.</p>
+        <div class="hero__proof">
+          <div class="proof-badge">
+            <span class="proof-badge__number">500+</span>
+            <span class="proof-badge__text">personas han aprendido con nosotros IA aplicada a casos reales de negocio.</span>
+          </div>
+        </div>
+        <div class="hero__cta">
+          <a href="#cta-final" class="btn btn--primary btn--large">Quiero pasar de usar IA a construir con IA</a>
+          <span class="hero__cta-sub">Clase en vivo &mdash; cupos limitados</span>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="video-placeholder" data-label="VIDEO: Demo de agente de IA en acci&oacute;n">
+          <div class="video-inner">
+            <img src="assets/placeholder-hero.svg" alt="Demo de un agente de IA siendo construido en clase en vivo" width="640" height="360">
+            <button class="play-btn" aria-label="Reproducir video">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="32" r="32" fill="rgba(217,119,87,0.9)"/>
+                <polygon points="26,20 26,44 46,32" fill="#fff"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 2: LOGOS -->
+  <section class="logos" id="logos">
+    <div class="container">
+      <p class="logos__intro">Profesionales de estas empresas ya han aprendido con nosotros</p>
+      <div class="logos__grid">
+        <div class="logos__item">
+          <svg viewBox="0 0 160 40" fill="currentColor" aria-label="Mastercard"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter" font-size="16" font-weight="600">Mastercard</text></svg>
+        </div>
+        <div class="logos__item">
+          <svg viewBox="0 0 160 40" fill="currentColor" aria-label="Rappi"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter" font-size="16" font-weight="600">Rappi</text></svg>
+        </div>
+        <div class="logos__item">
+          <svg viewBox="0 0 160 40" fill="currentColor" aria-label="MercadoLibre"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter" font-size="16" font-weight="600">MercadoLibre</text></svg>
+        </div>
+        <div class="logos__item">
+          <svg viewBox="0 0 160 40" fill="currentColor" aria-label="Bancolombia"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter" font-size="16" font-weight="600">Bancolombia</text></svg>
+        </div>
+        <div class="logos__item">
+          <svg viewBox="0 0 160 40" fill="currentColor" aria-label="Globant"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter" font-size="16" font-weight="600">Globant</text></svg>
+        </div>
+        <div class="logos__item">
+          <svg viewBox="0 0 160 40" fill="currentColor" aria-label="NuBank"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter" font-size="16" font-weight="600">NuBank</text></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 3: FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section-title">La IA se vuelve valiosa cuando la conviertes en <span class="text-accent">soluciones reales</span>.</h2>
+      <div class="features__grid">
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/>
+              <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+              <circle cx="12" cy="7" r="0.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Agentes que trabajan por ti</h3>
+          <p class="feature-card__desc">Aprende a construir agentes que ejecutan tareas sin que tengas que hacerlo manualmente.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12h4l3-9 3 18 3-9h4"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Workflows conectados</h3>
+          <p class="feature-card__desc">Flujos que conectan herramientas, datos y decisiones en un solo proceso.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M9 3v18"/>
+              <path d="M3 9h6"/>
+              <path d="M3 15h6"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Herramientas internas</h3>
+          <p class="feature-card__desc">Crea soluciones que tu equipo usar&iacute;a, sin depender del &aacute;rea de tecnolog&iacute;a.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <path d="M14 2v6h6"/>
+              <path d="M16 13H8"/>
+              <path d="M16 17H8"/>
+              <path d="M10 9H8"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">An&aacute;lisis de documentos</h3>
+          <p class="feature-card__desc">Convierte reportes, contratos y bases de datos en informaci&oacute;n &uacute;til con IA.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4"/>
+              <path d="M12 18v4"/>
+              <path d="M4.93 4.93l2.83 2.83"/>
+              <path d="M16.24 16.24l2.83 2.83"/>
+              <path d="M2 12h4"/>
+              <path d="M18 12h4"/>
+              <path d="M4.93 19.07l2.83-2.83"/>
+              <path d="M16.24 7.76l2.83-2.83"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Automatizaci&oacute;n de tareas repetitivas</h3>
+          <p class="feature-card__desc">Deja de hacer manualmente lo que una IA puede hacer por ti.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 16v-4"/>
+              <path d="M12 8h.01"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Criterio para elegir la herramienta correcta</h3>
+          <p class="feature-card__desc">Sab&eacute; cu&aacute;ndo usar ChatGPT, Claude, Claude Code, NotebookLM o un agente.</p>
+        </div>
+      </div>
+
+      <!-- Manejo de objecion -->
+      <div class="objection-card">
+        <p class="objection-card__quote">&ldquo;No necesito ser t&eacute;cnico para construir con IA&rdquo;</p>
+        <p class="objection-card__text">La clase est&aacute; dise&ntilde;ada para profesionales que piensan en problemas de negocio, no en c&oacute;digo. Si entiendes tu trabajo, puedes construir soluciones con IA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 4: VIDEO DEMO -->
+  <section class="demo" id="demo">
+    <div class="container">
+      <h2 class="section-title">Esto es lo que empieza a pasar cuando sabes <span class="text-accent">construir con IA</span>.</h2>
+      <div class="video-placeholder video-placeholder--large" data-label="VIDEO: Demo del curso">
+        <div class="video-inner">
+          <img src="assets/placeholder-demo.svg" alt="Captura de pantalla de Claude Code con un agente activo siendo construido en la clase" width="960" height="540">
+          <button class="play-btn" aria-label="Reproducir video de demostraci&oacute;n">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="40" fill="rgba(217,119,87,0.9)"/>
+              <polygon points="33,24 33,56 58,40" fill="#fff"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 5: TESTIMONIOS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">M&aacute;s de 500 personas han aprendido IA aplicada a problemas reales de marketing, ventas, finanzas y operaciones.</h2>
+      <div class="testimonials__grid">
+        <div class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar">MC</div>
+            <div>
+              <p class="testimonial-card__name">Mar&iacute;a Camila Restrepo</p>
+              <p class="testimonial-card__role">Gerente de Marketing &mdash; Retail</p>
+            </div>
+          </div>
+          <blockquote class="testimonial-card__quote">&ldquo;Llegu&eacute; pensando que iba a aprender prompts y sal&iacute; entendiendo c&oacute;mo dise&ntilde;ar soluciones completas. Ya automatic&eacute; tres reportes que me tomaban medio d&iacute;a.&rdquo;</blockquote>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar">JA</div>
+            <div>
+              <p class="testimonial-card__name">Juan Andr&eacute;s Vel&aacute;squez</p>
+              <p class="testimonial-card__role">Director de Operaciones &mdash; Log&iacute;stica</p>
+            </div>
+          </div>
+          <blockquote class="testimonial-card__quote">&ldquo;Lo que m&aacute;s me sirvi&oacute; fue entender el criterio: cu&aacute;ndo usar cada herramienta y c&oacute;mo conectarlas. Eso no lo encuentras en YouTube.&rdquo;</blockquote>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__header">
+            <div class="testimonial-card__avatar">LP</div>
+            <div>
+              <p class="testimonial-card__name">Laura Patricia G&oacute;mez</p>
+              <p class="testimonial-card__role">Analista de Finanzas &mdash; Banca</p>
+            </div>
+          </div>
+          <blockquote class="testimonial-card__quote">&ldquo;Nunca hab&iacute;a tocado c&oacute;digo y en la clase logr&eacute; construir mi primer agente. La metodolog&iacute;a te lleva paso a paso sin asumir que eres ingeniero.&rdquo;</blockquote>
+        </div>
+      </div>
+      <figure class="img-placeholder" data-label="IMAGEN: Participantes en clase virtual">
+        <img src="assets/placeholder-testimonials.svg" alt="Grupo de personas participando activamente en una clase virtual de IA, pantallas visibles con interfaces de trabajo" loading="lazy" width="960" height="540">
+      </figure>
+    </div>
+  </section>
+
+  <!-- BLOQUE 6: CONTENIDO DEL CURSO -->
+  <section class="curriculum" id="curriculum">
+    <div class="container">
+      <h2 class="section-title">Esto es lo que vas a aprender a <span class="text-accent">construir</span></h2>
+      <div class="curriculum__list">
+        <div class="curriculum__item">
+          <span class="curriculum__number">01</span>
+          <div>
+            <h3 class="curriculum__module">De herramientas sueltas a soluciones</h3>
+            <p class="curriculum__desc">C&oacute;mo pasar del uso de IA al dise&ntilde;o de soluciones con criterio.</p>
+          </div>
+        </div>
+        <div class="curriculum__item">
+          <span class="curriculum__number">02</span>
+          <div>
+            <h3 class="curriculum__module">Agentes: qu&eacute; son y c&oacute;mo dise&ntilde;arlos</h3>
+            <p class="curriculum__desc">Conceptos clave, casos de uso y primeros pasos para construir un agente.</p>
+          </div>
+        </div>
+        <div class="curriculum__item">
+          <span class="curriculum__number">03</span>
+          <div>
+            <h3 class="curriculum__module">Claude Code, Codex y Houston</h3>
+            <p class="curriculum__desc">C&oacute;mo usar cada herramienta seg&uacute;n el problema que quieres resolver.</p>
+          </div>
+        </div>
+        <div class="curriculum__item">
+          <span class="curriculum__number">04</span>
+          <div>
+            <h3 class="curriculum__module">Workflows y automatizaciones</h3>
+            <p class="curriculum__desc">Conectar herramientas para crear procesos que funcionan solos.</p>
+          </div>
+        </div>
+        <div class="curriculum__item">
+          <span class="curriculum__number">05</span>
+          <div>
+            <h3 class="curriculum__module">Herramientas internas para tu equipo</h3>
+            <p class="curriculum__desc">Construir soluciones que otros en tu empresa pueden usar.</p>
+          </div>
+        </div>
+        <div class="curriculum__item">
+          <span class="curriculum__number">06</span>
+          <div>
+            <h3 class="curriculum__module">Casos reales por &aacute;rea</h3>
+            <p class="curriculum__desc">Aplicaciones concretas en marketing, ventas, finanzas y operaciones.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="img-placeholder" data-label="IMAGEN: Diagrama de flujo de agente de IA">
+        <img src="assets/placeholder-curriculum.svg" alt="Diagrama visual de flujo mostrando la arquitectura de un agente de IA en pantalla" loading="lazy" width="960" height="540">
+      </figure>
+    </div>
+  </section>
+
+  <!-- BLOQUE 7: PARA QUIEN ES -->
+  <section class="audience" id="audience">
+    <div class="container">
+      <h2 class="section-title">Es para ti si...</h2>
+      <div class="audience__grid">
+        <div class="audience__col audience__col--yes">
+          <h3 class="audience__heading audience__heading--yes">Es para ti si:</h3>
+          <ul class="audience__list">
+            <li>Ya usas ChatGPT pero quieres ir m&aacute;s all&aacute;</li>
+            <li>Trabajas con procesos, reportes o clientes</li>
+            <li>Quieres volverte m&aacute;s valioso en tu empresa</li>
+            <li>Gestionas un equipo y quieres mejorar sus procesos con IA</li>
+          </ul>
+        </div>
+        <div class="audience__col audience__col--no">
+          <h3 class="audience__heading audience__heading--no">No es para ti si:</h3>
+          <ul class="audience__list">
+            <li>Buscas aprender a usar prompts b&aacute;sicos</li>
+            <li>Quieres un curso puramente t&eacute;cnico de programaci&oacute;n</li>
+            <li>No tienes intenci&oacute;n de aplicarlo a un problema real de trabajo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 8: FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <div class="faq__list">
+        <details class="faq__item">
+          <summary class="faq__question">&iquest;Necesito ser t&eacute;cnico para entrar a la clase?</summary>
+          <div class="faq__answer">
+            <p>No. La clase est&aacute; pensada para profesionales y empresarios. La idea es que entiendas c&oacute;mo pensar, dise&ntilde;ar y construir soluciones usando herramientas como Claude Code, Codex, Houston, ChatGPT, agentes y automatizaciones.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">&iquest;Esto es otra clase de prompts?</summary>
+          <div class="faq__answer">
+            <p>No. Los prompts son solo una parte peque&ntilde;a. El enfoque es aprender a construir soluciones reales: agentes, workflows, automatizaciones, herramientas internas, reportes y procesos que puedes aplicar en tu trabajo.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">&iquest;Voy a salir con algo construido?</summary>
+          <div class="faq__answer">
+            <p>La idea es que salgas entendiendo c&oacute;mo se construye una soluci&oacute;n real con IA y avances hacia tu primer agente, workflow o sistema aplicado a una tarea concreta.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">&iquest;Esto sirve si ya uso ChatGPT?</summary>
+          <div class="faq__answer">
+            <p>S&iacute;. Esta clase es exactamente para pasar del uso b&aacute;sico de ChatGPT a un nivel m&aacute;s avanzado: saber cu&aacute;ndo usar ChatGPT, Claude, Claude Code, NotebookLM, Codex, Houston, agentes o automatizaciones seg&uacute;n el problema.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">&iquest;Esto aplica a mi &aacute;rea?</summary>
+          <div class="faq__answer">
+            <p>S&iacute;, si trabajas con informaci&oacute;n, procesos, reportes, clientes, documentos, reuniones o tareas repetitivas. Se aterrizan casos en marketing, ventas, finanzas, operaciones y procesos internos.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">&iquest;Qu&eacute; pasa si siento que hay demasiadas herramientas y no s&eacute; por d&oacute;nde empezar?</summary>
+          <div class="faq__answer">
+            <p>Ese es uno de los problemas que vamos a resolver. No necesitas perseguir cada herramienta nueva. Necesitas criterio para saber cu&aacute;l usar, cu&aacute;ndo usarla y c&oacute;mo convertirla en una soluci&oacute;n &uacute;til.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 9: CTA SECUNDARIO -->
+  <section class="cta-section" id="cta-final">
+    <div class="container cta-section__inner">
+      <h2 class="cta-section__title">Convi&eacute;rtete en la persona que sabe construir con IA dentro de cualquier empresa.</h2>
+      <p class="cta-section__subtitle">Clase en vivo. Cupos limitados. Sin requisitos t&eacute;cnicos.</p>
+      <div class="cta-section__action">
+        <a href="#" class="btn btn--primary btn--large">Quiero crear mi primer agente</a>
+        <span class="cta-section__sub">Asegura tu lugar hoy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 10: FUNDADOR -->
+  <section class="founder" id="founder">
+    <div class="container founder__inner">
+      <div class="founder__photo">
+        <img src="assets/placeholder-instructor.svg" alt="Foto del instructor del curso de IA aplicada" width="300" height="400" loading="lazy">
+      </div>
+      <div class="founder__content">
+        <h2 class="section-title">Por qu&eacute; construimos este curso</h2>
+        <div class="founder__text">
+          <p>Hace dos a&ntilde;os, la mayor&iacute;a de los profesionales que conoc&iacute;amos usaban ChatGPT para resumir correos. Hoy, los que entienden c&oacute;mo construir con IA toman decisiones m&aacute;s r&aacute;pido, automatizan lo que antes les consum&iacute;a d&iacute;as y se vuelven indispensables en sus equipos.</p>
+          <p>No construimos este curso para ense&ntilde;ar herramientas. Lo construimos para darte criterio. Para que sepas qu&eacute; hacer con la IA cuando el problema es tuyo y la soluci&oacute;n no est&aacute; en un tutorial de YouTube.</p>
+          <p>Hemos acompa&ntilde;ado a m&aacute;s de 500 personas. Esto funciona.</p>
+        </div>
+        <div class="founder__signature">
+          <p class="founder__name">Equipo Acelera</p>
+          <p class="founder__company">Altiora Strategy &amp; Investments S.A.S.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="footer__logo">Acelera</a>
+        <p class="footer__company">Altiora Strategy &amp; Investments S.A.S.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#">Pol&iacute;tica de privacidad</a>
+        <a href="#">T&eacute;rminos y condiciones</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
