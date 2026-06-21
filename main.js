@@ -125,6 +125,12 @@
     successContainer.style.display = 'none';
     errorEl.style.display = 'none';
     formEl.reset();
+    if (typeof gtag === 'function') {
+      gtag('event', 'reservar_click', {
+        event_category: 'engagement',
+        event_label: 'waitlist_modal_open'
+      });
+    }
   }
 
   function closeModal() {
@@ -173,6 +179,17 @@
         }
         formContainer.style.display = 'none';
         successContainer.style.display = 'block';
+        if (typeof gtag === 'function') {
+          gtag('event', 'lead_generado', {
+            event_category: 'conversion',
+            event_label: 'waitlist_signup',
+            value: 1
+          });
+          gtag('event', 'generate_lead', {
+            currency: 'USD',
+            value: 1
+          });
+        }
       })
       .catch(function (err) {
         errorEl.textContent = err.message || 'Hubo un error. Inténtalo de nuevo.';
