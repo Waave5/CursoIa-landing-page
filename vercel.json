@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "cookie",
+          "key": "ab_variant",
+          "value": "b"
+        }
+      ],
+      "destination": "/b/index.html"
+    }
+  ]
+}
