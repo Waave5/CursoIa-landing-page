@@ -160,8 +160,9 @@
 
     var name = document.getElementById('waitlistName').value.trim();
     var email = document.getElementById('waitlistEmail').value.trim();
+    var phone = document.getElementById('waitlistPhone').value.trim();
 
-    if (!name || !email) {
+    if (!name || !email || !phone) {
       errorEl.textContent = 'Por favor completa todos los campos.';
       errorEl.style.display = 'block';
       return;
@@ -172,7 +173,7 @@
 
     supabase
       .from('waitlist')
-      .insert({ name: name, email: email })
+      .insert({ name: name, email: email, phone: phone })
       .then(function (result) {
         if (result.error) {
           throw new Error(result.error.message || 'Error al registrarte');
