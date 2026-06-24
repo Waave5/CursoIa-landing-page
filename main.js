@@ -107,6 +107,87 @@
   });
 
   // ============================
+  // COUNTRY PHONE SELECTOR
+  // ============================
+  var countries = [
+    { name: 'Colombia', flag: '🇨🇴', dial: '+57' },
+    { name: 'México', flag: '🇲🇽', dial: '+52' },
+    { name: 'Argentina', flag: '🇦🇷', dial: '+54' },
+    { name: 'Chile', flag: '🇨🇱', dial: '+56' },
+    { name: 'Perú', flag: '🇵🇪', dial: '+51' },
+    { name: 'Ecuador', flag: '🇪🇨', dial: '+593' },
+    { name: 'Venezuela', flag: '🇻🇪', dial: '+58' },
+    { name: 'Bolivia', flag: '🇧🇴', dial: '+591' },
+    { name: 'Paraguay', flag: '🇵🇾', dial: '+595' },
+    { name: 'Uruguay', flag: '🇺🇾', dial: '+598' },
+    { name: 'Panamá', flag: '🇵🇦', dial: '+507' },
+    { name: 'Costa Rica', flag: '🇨🇷', dial: '+506' },
+    { name: 'Guatemala', flag: '🇬🇹', dial: '+502' },
+    { name: 'Honduras', flag: '🇭🇳', dial: '+504' },
+    { name: 'El Salvador', flag: '🇸🇻', dial: '+503' },
+    { name: 'Nicaragua', flag: '🇳🇮', dial: '+505' },
+    { name: 'Cuba', flag: '🇨🇺', dial: '+53' },
+    { name: 'Rep. Dominicana', flag: '🇩🇴', dial: '+1' },
+    { name: 'Puerto Rico', flag: '🇵🇷', dial: '+1' },
+    { name: 'España', flag: '🇪🇸', dial: '+34' },
+    { name: 'Estados Unidos', flag: '🇺🇸', dial: '+1' },
+    { name: 'Brasil', flag: '🇧🇷', dial: '+55' },
+    { name: 'Portugal', flag: '🇵🇹', dial: '+351' },
+    { name: 'Francia', flag: '🇫🇷', dial: '+33' },
+    { name: 'Alemania', flag: '🇩🇪', dial: '+49' },
+    { name: 'Italia', flag: '🇮🇹', dial: '+39' },
+    { name: 'Reino Unido', flag: '🇬🇧', dial: '+44' },
+    { name: 'Canadá', flag: '🇨🇦', dial: '+1' }
+  ];
+
+  var countryBtn = document.getElementById('countryBtn');
+  var countryFlag = document.getElementById('countryFlag');
+  var countryCodeEl = document.getElementById('countryCode');
+  var countryDropdown = document.getElementById('countryDropdown');
+  var countryList = document.getElementById('countryList');
+  var countrySearch = document.getElementById('countrySearch');
+  var selectedDial = '+57';
+
+  function renderCountries(filter) {
+    var query = (filter || '').toLowerCase();
+    countryList.innerHTML = '';
+    countries.forEach(function (c) {
+      if (query && c.name.toLowerCase().indexOf(query) === -1 && c.dial.indexOf(query) === -1) return;
+      var li = document.createElement('li');
+      li.innerHTML = '<span>' + c.flag + '</span><span>' + c.name + '</span><span class="country-dial">' + c.dial + '</span>';
+      li.addEventListener('click', function () {
+        countryFlag.textContent = c.flag;
+        countryCodeEl.textContent = c.dial;
+        selectedDial = c.dial;
+        countryDropdown.classList.remove('open');
+        countrySearch.value = '';
+      });
+      countryList.appendChild(li);
+    });
+  }
+
+  renderCountries();
+
+  countryBtn.addEventListener('click', function () {
+    countryDropdown.classList.toggle('open');
+    if (countryDropdown.classList.contains('open')) {
+      countrySearch.value = '';
+      renderCountries();
+      countrySearch.focus();
+    }
+  });
+
+  countrySearch.addEventListener('input', function () {
+    renderCountries(countrySearch.value);
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.phone-input-wrap')) {
+      countryDropdown.classList.remove('open');
+    }
+  });
+
+  // ============================
   // WAITLIST MODAL
   // ============================
   var modal = document.getElementById('waitlistModal');
@@ -160,9 +241,10 @@
 
     var name = document.getElementById('waitlistName').value.trim();
     var email = document.getElementById('waitlistEmail').value.trim();
-    var phone = document.getElementById('waitlistPhone').value.trim();
+    var phoneNumber = document.getElementById('waitlistPhone').value.trim();
+    var phone = selectedDial + ' ' + phoneNumber;
 
-    if (!name || !email || !phone) {
+    if (!name || !email || !phoneNumber) {
       errorEl.textContent = 'Por favor completa todos los campos.';
       errorEl.style.display = 'block';
       return;
