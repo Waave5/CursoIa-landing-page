@@ -16,7 +16,8 @@
   var variant = existingVariant;
 
   if (!variant) {
-    variant = Math.random() < 0.5 ? 'a' : 'b';
+    // variant = Math.random() < 0.5 ? 'a' : 'b';
+    variant = 'a';
     setCookie(COOKIE_NAME, variant, COOKIE_DAYS);
   }
 
