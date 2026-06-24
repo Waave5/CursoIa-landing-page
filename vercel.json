@@ -1,11 +1,5 @@
 {
-  "_comment_ab_test": "Descomentar el primer rewrite para reactivar A/B testing",
   "rewrites": [
-    {
-      "_disabled_source": "/ai",
-      "_disabled_has": [{ "type": "cookie", "key": "ab_variant", "value": "b" }],
-      "_disabled_destination": "/b/index.html"
-    },
     {
       "source": "/ai",
       "destination": "/index.html"

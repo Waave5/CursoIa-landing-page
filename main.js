@@ -180,6 +180,7 @@
         }
         formContainer.style.display = 'none';
         successContainer.style.display = 'block';
+        window.open('https://chat.whatsapp.com/K9Oi96tEbpyKZItZA9s4oI', '_blank');
         if (typeof gtag === 'function') {
           gtag('event', 'lead_generado', {
             event_category: 'conversion',
