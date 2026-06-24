@@ -191,6 +191,9 @@
             value: 1
           });
         }
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead');
+        }
       })
       .catch(function (err) {
         errorEl.textContent = err.message || 'Hubo un error. Inténtalo de nuevo.';
