@@ -5,6 +5,38 @@
   var SUPABASE_KEY = 'sb_publishable_w307U-W374CxL9eSuBL-3g_MFtR2ER5';
   var supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+  // ============================
+  // TRACKING HELPERS (Meta Pixel + Conversions API)
+  // ============================
+  var META_PIXEL_ID = '997300713288599';
+
+  function getCookie(name) {
+    var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return m ? m[2] : null;
+  }
+
+  // event_id único: deduplica el evento del navegador con el del servidor (CAPI).
+  function newEventId() {
+    if (window.crypto && window.crypto.randomUUID) return window.crypto.randomUUID();
+    return 'ev-' + Date.now() + '-' + Math.floor(Math.random() * 1e9);
+  }
+
+  // Persiste el click-id de Meta (_fbc) desde ?fbclid= para atribución server-side.
+  (function persistFbc() {
+    try {
+      var fbclid = new URLSearchParams(window.location.search).get('fbclid');
+      if (fbclid && !getCookie('_fbc')) {
+        document.cookie = '_fbc=fb.1.' + Date.now() + '.' + fbclid +
+          '; max-age=7776000; path=/; SameSite=Lax';
+      }
+    } catch (e) {}
+  })();
+
+  // ViewContent: registró la vista de la landing (para públicos de retargeting).
+  if (typeof fbq === 'function') {
+    fbq('track', 'ViewContent', { content_name: 'Landing Curso IA' });
+  }
+
   // Navbar scroll behavior
   var navbar = document.getElementById('navbar');
   var scrollThreshold = 60;
@@ -86,6 +118,12 @@
       var videoSrc = placeholder.getAttribute('data-video-src');
 
       if (!videoSrc && !videoId) return;
+
+      if (typeof fbq === 'function') {
+        fbq('trackCustom', 'PlayVideo', {
+          content_name: placeholder.getAttribute('data-label') || 'video'
+        });
+      }
 
       var src = videoSrc || 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1';
 
@@ -212,6 +250,9 @@
         event_label: 'waitlist_modal_open'
       });
     }
+    if (typeof fbq === 'function') {
+      fbq('trackCustom', 'ReservarClick');
+    }
   }
 
   function closeModal() {
@@ -262,7 +303,8 @@
         }
         formContainer.style.display = 'none';
         successContainer.style.display = 'block';
-        window.open('https://chat.whatsapp.com/K9Oi96tEbpyKZItZA9s4oI', '_blank');
+        // Disparar el tracking ANTES de redirigir a WhatsApp,
+        // si no, en mobile el salto a la app corta el evento Lead.
         if (typeof gtag === 'function') {
           gtag('event', 'lead_generado', {
             event_category: 'conversion',
@@ -274,9 +316,41 @@
             value: 1
           });
         }
+        // event_id compartido navegador <-> servidor para que Meta deduplique.
+        var eventId = newEventId();
+        var nameParts = name.trim().split(/\s+/);
+
+        // Meta Pixel (navegador) con Advanced Matching + event_id.
         if (typeof fbq === 'function') {
-          fbq('track', 'Lead');
+          fbq('init', META_PIXEL_ID, {
+            em: email,
+            ph: phone,
+            fn: nameParts[0] || '',
+            ln: nameParts.slice(1).join(' ')
+          });
+          fbq('track', 'Lead', {}, { eventID: eventId });
         }
+
+        // Meta Conversions API (servidor) — mismo event_id => sin doble conteo.
+        // keepalive asegura el envío aunque la página salte a WhatsApp en mobile.
+        try {
+          fetch('/api/capi-lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            keepalive: true,
+            body: JSON.stringify({
+              event_id: eventId,
+              email: email,
+              phone: phone,
+              name: name,
+              fbp: getCookie('_fbp'),
+              fbc: getCookie('_fbc'),
+              event_source_url: window.location.href
+            })
+          });
+        } catch (e) {}
+
+        window.open('https://chat.whatsapp.com/K9Oi96tEbpyKZItZA9s4oI', '_blank');
       })
       .catch(function (err) {
         errorEl.textContent = err.message || 'Hubo un error. Inténtalo de nuevo.';
