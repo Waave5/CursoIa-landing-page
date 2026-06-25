@@ -318,16 +318,14 @@
         }
         // event_id compartido navegador <-> servidor para que Meta deduplique.
         var eventId = newEventId();
-        var nameParts = name.trim().split(/\s+/);
 
-        // Meta Pixel (navegador) con Advanced Matching + event_id.
+        // Meta Pixel (navegador) con event_id para dedupe.
+        // IMPORTANTE: NO re-inicializar con Advanced Matching aquí. El fbq('init')
+        // encola el evento esperando recargar la config, y el window.open a WhatsApp
+        // lo corta antes de que salga (verificado en pruebas). Sin el init, el Lead
+        // se envía por sendBeacon y sobrevive la redirección. El Advanced Matching
+        // viaja en la CAPI (servidor), donde es más confiable.
         if (typeof fbq === 'function') {
-          fbq('init', META_PIXEL_ID, {
-            em: email,
-            ph: phone,
-            fn: nameParts[0] || '',
-            ln: nameParts.slice(1).join(' ')
-          });
           fbq('track', 'Lead', {}, { eventID: eventId });
         }
 
