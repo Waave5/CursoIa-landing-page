@@ -284,8 +284,9 @@
     var email = document.getElementById('waitlistEmail').value.trim();
     var phoneNumber = document.getElementById('waitlistPhone').value.trim();
     var phone = selectedDial + ' ' + phoneNumber;
+    var occupation = document.getElementById('waitlistOccupation').value;
 
-    if (!name || !email || !phoneNumber) {
+    if (!name || !email || !phoneNumber || !occupation) {
       errorEl.textContent = 'Por favor completa todos los campos.';
       errorEl.style.display = 'block';
       return;
@@ -296,7 +297,7 @@
 
     supabase
       .from('waitlist')
-      .insert({ name: name, email: email, phone: phone })
+      .insert({ name: name, email: email, phone: phone, occupation: occupation })
       .then(function (result) {
         if (result.error) {
           throw new Error(result.error.message || 'Error al registrarte');
@@ -341,6 +342,7 @@
               email: email,
               phone: phone,
               name: name,
+              occupation: occupation,
               fbp: getCookie('_fbp'),
               fbc: getCookie('_fbc'),
               event_source_url: window.location.href
